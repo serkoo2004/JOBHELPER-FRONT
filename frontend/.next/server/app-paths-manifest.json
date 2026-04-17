@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/(auth)/sign-in/page": "app/(auth)/sign-in/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/career-tools/page": "app/dashboard/career-tools/page.js",
+  "/dashboard/career-tools/[slug]/page": "app/dashboard/career-tools/[slug]/page.js",
+  "/(auth)/sign-up/page": "app/(auth)/sign-up/page.js"
+}
