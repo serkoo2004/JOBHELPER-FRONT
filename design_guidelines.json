@@ -1,0 +1,126 @@
+{
+  "project_name": "Career Copilot",
+  "archetype": "Swiss & High-Contrast + Jewel & Luxury",
+  "theme_strategy": "Hybrid Light & Dark (Dark-first premium Vercel/Linear aesthetic).",
+  "instructions_to_main_agent": [
+    "Use Next.js App Router, TypeScript, Tailwind CSS, Framer Motion.",
+    "Do NOT use standard Shadcn purple/blue gradients. Follow the STRICT color tokens provided. The aesthetic is monochromatic and ultra-high-end.",
+    "Build the Auth UI (Login/Register) EXPLICITLY as a Glassmorphic box floating over an animated blurred background.",
+    "Implement 8px grid system. Radius scale from xs (6px) to 2xl (36px).",
+    "Use staggered Framer Motion reveals for page loading. No continuous rotation, bounce, or blur animation.",
+    "Implement progressive disclosure in the dashboard. Hide non-essential elements until hover/focus.",
+    "All interactive elements MUST have data-testid attributes."
+  ],
+  "typography": {
+    "fonts": {
+      "heading": "'Cabinet Grotesk', sans-serif",
+      "body": "'Geist', 'Inter', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "scale": {
+      "h1": "text-5xl md:text-6xl tracking-tighter font-medium",
+      "h2": "text-4xl md:text-5xl tracking-tight font-medium",
+      "h3": "text-2xl md:text-3xl tracking-tight font-medium",
+      "h4": "text-xl md:text-2xl tracking-tight",
+      "body_large": "text-lg leading-relaxed text-muted-foreground",
+      "body": "text-base leading-relaxed text-foreground",
+      "small": "text-sm text-muted-foreground",
+      "label": "text-xs font-mono tracking-[0.05em] uppercase"
+    }
+  },
+  "colors": {
+    "dark": {
+      "background": "#0A0A0A",
+      "surface": "#121212",
+      "surface_elevated": "#1A1A1A",
+      "border": "rgba(255, 255, 255, 0.08)",
+      "foreground": "#FAFAFA",
+      "muted": "rgba(255, 255, 255, 0.6)",
+      "primary": "#FFFFFF",
+      "primary_foreground": "#000000",
+      "accent": "#F5F5F3",
+      "accent_foreground": "#0A0A0A",
+      "ring": "rgba(255, 255, 255, 0.2)"
+    },
+    "light": {
+      "background": "#FAFAFA",
+      "surface": "#FFFFFF",
+      "surface_elevated": "#F4F4F5",
+      "border": "rgba(0, 0, 0, 0.08)",
+      "foreground": "#0A0A0A",
+      "muted": "rgba(0, 0, 0, 0.6)",
+      "primary": "#0A0A0A",
+      "primary_foreground": "#FFFFFF",
+      "accent": "#F4F4F5",
+      "accent_foreground": "#0A0A0A",
+      "ring": "rgba(0, 0, 0, 0.2)"
+    }
+  },
+  "glassmorphism": {
+    "auth_box": {
+      "dark": "bg-black/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)]",
+      "light": "bg-white/60 backdrop-blur-2xl border border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.05)]"
+    },
+    "navbar": {
+      "dark": "bg-black/60 backdrop-blur-xl border-b border-white/5",
+      "light": "bg-white/70 backdrop-blur-xl border-b border-black/5"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "card_padding": "p-8 md:p-12",
+      "section_gap": "gap-24 md:gap-32",
+      "container": "max-w-7xl mx-auto px-6"
+    },
+    "radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-md",
+      "input": "rounded-md",
+      "badge": "rounded-full"
+    }
+  },
+  "motion": {
+    "page_reveal": {
+      "initial": { "opacity": 0, "y": 20 },
+      "animate": { "opacity": 1, "y": 0 },
+      "transition": { "type": "spring", "stiffness": 100, "damping": 20, "staggerChildren": 0.1 }
+    },
+    "hover_card": {
+      "whileHover": { "y": -4 },
+      "transition": { "type": "spring", "stiffness": 400, "damping": 30 }
+    }
+  },
+  "components": {
+    "Button": {
+      "primary": "bg-primary text-primary-foreground hover:bg-primary/90 rounded-md font-medium transition-all shadow-sm",
+      "secondary": "bg-transparent border border-input hover:bg-accent hover:text-accent-foreground rounded-md transition-all",
+      "ghost": "hover:bg-accent hover:text-accent-foreground rounded-md transition-all"
+    },
+    "Input": "bg-transparent border-border focus-visible:ring-1 focus-visible:ring-ring rounded-md transition-all",
+    "Card": "bg-surface border border-border rounded-2xl overflow-hidden"
+  },
+  "pages": {
+    "landing": "Hero with dark abstract geometric background, large typography (Cabinet Grotesk), floating glass navbar. Feature bento grid with 1px borders. Marquee for dummy tech logos.",
+    "auth": "CRITICAL: Full viewport height. Background is an animated subtle mesh gradient. The login/register form is a centered GLASSMORPHIC BOX (`bg-black/40 backdrop-blur-2xl border border-white/10`).",
+    "dashboard_shell": "Linear-style left sidebar (dark, highly minimal, no heavy backgrounds on hover, just subtle text color changes). Top navbar for breadcrumbs and actions.",
+    "dashboard_home": "4 stat cards with subtle sparklines. Quick-start drag-drop card area. Recent items table with minimalist borders.",
+    "profile_editor": "Rich form. Inputs should have subtle borders. Include a sticky 'AI suggestions' side panel.",
+    "resume_builder": "Multi-step flow. Live preview pane on the right. AI warnings on the left. High contrast for the actual document preview.",
+    "career_tools": "Grid of 7 tool cards. Each tool card has a subtle glow or 'tracing beam' effect on hover.",
+    "applications_tracker": "Kanban board. Minimalist columns. Drag and drop UI. Use `border-dashed` for empty states.",
+    "ai_chat": "Chat interface. User messages align right (subtle surface background). AI messages align left (transparent background).",
+    "admin_panel": "Dense data table. High contrast text. Use JetBrains Mono for metrics and IDs.",
+    "upload_cv": "Large drag-and-drop zone with dashed borders. Subtle pulse animation when hovering with a file.",
+    "settings": "Vertical tabs layout. High contrast toggles. Danger zone with red bordered buttons."
+  },
+  "media": {
+    "images": {
+      "auth_background_mesh": "https://images.unsplash.com/photo-1771814565026-58211c831115?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxkYXJrJTIwYWJzdHJhY3QlMjBtZXNoJTIwZ3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3NjQ2MDc2OXww&ixlib=rb-4.1.0&q=85",
+      "hero_light_bg": "https://images.unsplash.com/photo-1764437358331-d481ce4bdfa9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMGFic3RyYWN0JTIwY2xlYW4lMjBnZW9tZXRyaWMlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3NjQ2MDc2OXww&ixlib=rb-4.1.0&q=85",
+      "avatar_1": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NjQ2MDc2NHww&ixlib=rb-4.1.0&q=85",
+      "avatar_2": "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NjQ2MDc2NHww&ixlib=rb-4.1.0&q=85",
+      "logo_1": "https://images.unsplash.com/photo-1661347998423-b15d37d6f61e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwY29tcGFueSUyMGxvZ298ZW58MHx8fHwxNzc2NDYwNzY4fDA&ixlib=rb-4.1.0&q=85",
+      "logo_2": "https://images.pexels.com/photos/5620312/pexels-photo-5620312.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  }
+}
